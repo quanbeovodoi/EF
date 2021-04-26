@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="webOnlineModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="News_Category">
+    <Key>
+      <PropertyRef Name="IDCategory" />
+    </Key>
+    <Property Name="IDCategory" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CateName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="cLink" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="cOrder" Type="Int32" />
+    <Property Name="cActive" Type="Boolean" />
+  </EntityType>
+  <EntityContainer Name="webOnlineEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="News_Category" EntityType="Self.News_Category" />
+    <FunctionImport Name="spgetList_News_Category" ReturnType="Collection(webOnlineModel.spgetList_News_Category_Result)" />
+  </EntityContainer>
+  <ComplexType Name="spgetList_News_Category_Result">
+    <Property Type="Int32" Name="IDCategory" Nullable="false" />
+    <Property Type="String" Name="CateName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="cLink" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="cOrder" Nullable="true" />
+    <Property Type="Boolean" Name="cActive" Nullable="true" />
+  </ComplexType>
+</Schema>

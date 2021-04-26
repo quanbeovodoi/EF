@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="webOnlineModelStoreContainer" CdmEntityContainer="webOnlineEntities1">
+    <EntitySetMapping Name="News_Category">
+      <EntityTypeMapping TypeName="webOnlineModel.News_Category">
+        <MappingFragment StoreEntitySet="News_Category">
+          <ScalarProperty Name="IDCategory" ColumnName="IDCategory" />
+          <ScalarProperty Name="CateName" ColumnName="CateName" />
+          <ScalarProperty Name="cLink" ColumnName="cLink" />
+          <ScalarProperty Name="cOrder" ColumnName="cOrder" />
+          <ScalarProperty Name="cActive" ColumnName="cActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="spgetList_News_Category" FunctionName="webOnlineModel.Store.spgetList_News_Category">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="webOnlineModel.spgetList_News_Category_Result">
+          <ScalarProperty Name="IDCategory" ColumnName="IDCategory" />
+          <ScalarProperty Name="CateName" ColumnName="CateName" />
+          <ScalarProperty Name="cLink" ColumnName="cLink" />
+          <ScalarProperty Name="cOrder" ColumnName="cOrder" />
+          <ScalarProperty Name="cActive" ColumnName="cActive" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>
